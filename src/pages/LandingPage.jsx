@@ -51,7 +51,7 @@ const LandingPage = ({ page }) => {
             playsinline
             width="100%"
             height="100%"
-            className="react-player opacity-60 scale-x-150"
+            className="react-player opacity-60"
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40"></div>
