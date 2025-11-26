@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    @apply text-slate-800 bg-slate-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .heading {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-slate-900;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-5xl font-bold leading-tight text-slate-900;
+  }
+  
+  .section-heading {
+    @apply text-2xl md:text-4xl font-bold leading-snug text-slate-900;
+  }
+  
+  .btn {
+    @apply inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 transform active:scale-95;
+  }
+
+  .primary-btn {
+    @apply btn bg-primary text-white shadow-lg shadow-primary/30 hover:bg-indigo-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/40;
+  }
+  
+  .secondary-btn {
+    @apply btn bg-white text-primary border border-slate-200 shadow-sm hover:border-primary/50 hover:bg-slate-50 hover:-translate-y-1;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl rounded-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-purpleColor to-secondary;
+  }
+  
+  .link {
+    @apply text-slate-600 hover:text-primary transition-colors duration-300 font-medium;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+/* Loading Spinner */
+.spinner-parent {
+  @apply fixed inset-0 z-[9999] flex justify-center items-center bg-white/80 backdrop-blur-sm;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #4F46E5 #4F46E5 transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #0EA5E9 #0EA5E9;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
+@keyframes rotationBack {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+} 
