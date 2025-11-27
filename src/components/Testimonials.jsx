@@ -85,7 +85,10 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Slider */}
-        <div data-aos="fade-left" className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 relative">
+        <div
+          data-aos="fade-left"
+          className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden"
+        >
           <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
           <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-secondary/10 rounded-full blur-xl"></div>
           
@@ -95,7 +98,7 @@ const Testimonials = () => {
             ))}
           </div>
 
-          <div ref={sliderRef} className="keen-slider mb-8">
+          <div ref={sliderRef} className="keen-slider mb-8 overflow-hidden">
             {testimonials.map((item) => (
               <div key={item.name} className="keen-slider__slide space-y-6">
                 <p className="text-lg md:text-xl text-slate-700 italic leading-relaxed">
