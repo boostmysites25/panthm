@@ -68,7 +68,7 @@ const ContactForm = ({ headline, id }) => {
   return (
     <div id={id} className="wrapper py-20">
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 grid lg:grid-cols-2">
-        <div data-aos="fade-right" className="p-8 md:p-12 lg:p-16 bg-slate-50">
+        <div data-aos="fade-up" className="p-8 md:p-12 lg:p-16 bg-slate-50">
           <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             {headline ? headline : "Let’s build something great together."}
           </h3>
@@ -173,7 +173,7 @@ const ContactForm = ({ headline, id }) => {
           </form>
         </div>
 
-        <div data-aos="fade-left" className="relative hidden lg:block h-full min-h-[600px]">
+        <div data-aos="fade-up" className="relative hidden lg:block h-full min-h-[600px]">
           <img 
             src={img} 
             alt="Contact Us" 

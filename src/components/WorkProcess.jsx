@@ -18,7 +18,7 @@ const WorkProcess = () => {
       </div>
 
       <div className="wrapper relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div data-aos="fade-right" className="space-y-8">
+        <div data-aos="fade-up" className="space-y-8">
           <div className="space-y-4">
             <h2 className="section-heading">How We Build Success</h2>
             <p className="text-slate-600 text-lg">
@@ -82,7 +82,7 @@ const WorkProcess = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" className="relative hidden lg:block h-full min-h-[600px]">
+        <div data-aos="fade-up" className="relative hidden lg:block h-full min-h-[600px]">
            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl border border-slate-100"></div>
            {/* You can add a dynamic illustration or image here based on the active step if desired */}
            <div className="absolute inset-0 flex items-center justify-center p-10">

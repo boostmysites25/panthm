@@ -54,7 +54,7 @@ const Testimonials = () => {
     <div className="wrapper">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Awards Section */}
-        <div data-aos="fade-right" className="space-y-8">
+        <div data-aos="fade-up" className="space-y-8">
           <div className="space-y-4">
             <h2 className="section-heading text-left">
               Recognized for Excellence
@@ -86,7 +86,7 @@ const Testimonials = () => {
 
         {/* Testimonials Slider */}
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden"
         >
           <div className="absolute -top-6 -right-6 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>

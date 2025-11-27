@@ -107,7 +107,7 @@ const AboutUs = () => {
       <section className="py-20 wrapper">
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Card 1 */}
-          <div data-aos="fade-right" className="group relative rounded-3xl overflow-hidden min-h-[400px]">
+          <div data-aos="fade-up" className="group relative rounded-3xl overflow-hidden min-h-[400px]">
             <img
               src={img1}
               alt="Hire Developers"
@@ -131,7 +131,7 @@ const AboutUs = () => {
           </div>
 
           {/* Card 2 */}
-          <div data-aos="fade-left" className="flex flex-col gap-8">
+          <div data-aos="fade-up" className="flex flex-col gap-8">
             <div className="relative rounded-3xl overflow-hidden flex-grow min-h-[300px] group">
               <img
                 src={img2}

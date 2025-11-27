@@ -138,7 +138,7 @@ const ContactUs = () => {
           </div>
 
           <div className="mt-20 grid lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right" className="space-y-6">
+            <div data-aos="fade-up" className="space-y-6">
               <h2 className="section-heading text-left">
                 Get in Touch
               </h2>
@@ -216,7 +216,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div data-aos="fade-left" className="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+            <div data-aos="fade-up" className="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
               <MapComponent />
             </div>
           </div>
