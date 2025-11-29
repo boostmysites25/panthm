@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { services } from "../../data/services";
-import { Facebook, Instagram, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import { companyDetails, logo } from "../../data/constant";
 
 const Footer = () => {
@@ -20,7 +28,8 @@ const Footer = () => {
               <img src={logo} alt="PANTHM" className="h-12 object-contain" />
             </Link>
             <p className="text-slate-600 leading-relaxed">
-              Pioneering the future of digital interaction through AI, Blockchain, and immersive design.
+              Pioneering the future of digital interaction through AI,
+              Blockchain, and immersive design.
             </p>
             <div className="flex gap-4">
               {[Linkedin, Instagram, Facebook, Twitter].map((Icon, i) => (
@@ -78,7 +87,9 @@ const Footer = () => {
 
           {/* Contact Column */}
           <div>
-            <h4 className="text-lg font-bold text-slate-900 mb-6">Get in Touch</h4>
+            <h4 className="text-lg font-bold text-slate-900 mb-6">
+              Get in Touch
+            </h4>
             <ul className="space-y-6">
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/10 text-primary">
@@ -92,7 +103,10 @@ const Footer = () => {
                 <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Phone size={20} />
                 </div>
-                <a href={`tel:${companyDetails.phone}`} className="text-slate-600 hover:text-primary transition-colors font-medium">
+                <a
+                  href={`tel:${companyDetails.phone}`}
+                  className="text-slate-600 hover:text-primary transition-colors font-medium"
+                >
                   {companyDetails.phone}
                 </a>
               </li>
@@ -100,7 +114,10 @@ const Footer = () => {
                 <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Mail size={20} />
                 </div>
-                <a href={`mailto:${companyDetails.email}`} className="text-slate-600 hover:text-primary transition-colors font-medium">
+                <a
+                  href={`mailto:${companyDetails.email}`}
+                  className="text-slate-600 hover:text-primary transition-colors font-medium"
+                >
                   {companyDetails.email}
                 </a>
               </li>
@@ -108,14 +125,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-start items-center gap-4">
           <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} PANTHM AI Labs. All rights reserved.
+            &copy; {new Date().getFullYear()} PANTHM AI Labs. All rights
+            reserved.
           </p>
-          <div className="flex gap-6 text-sm text-slate-500">
-            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -41,9 +41,10 @@ const ContactForm = ({ headline, id }) => {
       to: companyDetails.email,
       subject: "Contact Form Submission - PANTHM AI Labs",
       body: emailBody,
+      name:"Panthm AI Labs"
     };
 
-    await fetch("https://smtp-api-tawny.vercel.app/send-email", {
+    await fetch("https://send-mail-redirect-boostmysites.vercel.app/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

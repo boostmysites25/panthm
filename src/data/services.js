@@ -349,4 +349,92 @@ export const services = [
   `,
     },
   },
+  {
+    title: "Infrastructure",
+    image: require("../assets/images/infrastructure-dev-vector.png"),
+    shortDesc:
+      "Building resilient, scalable cloud architectures that power digital transformation.",
+    technologies: ["AWS", "Azure", "Docker", "Kubernetes", "Terraform"],
+    detailsPageImages: {
+      first: require("../assets/images/services/infrastructure1.webp"),
+      second: require("../assets/images/services/infrastructure2.webp"),
+      third: require("../assets/images/services/infrastructure3.webp"),
+    },
+    html: {
+      firstSection: `<h2 class="text-xl font-semibold mb-4">
+    Engineering the Digital Backbone of Tomorrow
+  </h2>
+  <p class="mb-10">
+    Infrastructure is the silent engine that powers every digital interaction. 
+    At <span class="font-semibold">PANTHM AI Labs</span>, we architect cloud-native infrastructures that are not just robust, but intelligent—self-healing, auto-scaling, and perpetually optimized. 
+    We transform your technology stack into a competitive advantage.
+  </p>
+  
+  <h2 class="text-xl font-semibold mb-4">Our Infrastructure Expertise:</h2>
+  <ul class="list-disc pl-6">
+    <li class="mb-3">
+      <span class="font-semibold">Cloud-Native Architecture:</span> We design systems that leverage the full power of AWS, Azure, and GCP, creating elastic infrastructures that scale on demand.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Container Orchestration:</span> Using Kubernetes and Docker, we containerize your applications for portability, efficiency, and seamless deployment.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Infrastructure as Code (IaC):</span> We codify your infrastructure using Terraform and CloudFormation, ensuring version control, reproducibility, and disaster recovery.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">DevOps Automation:</span> We build CI/CD pipelines that accelerate deployment cycles while maintaining rigorous quality gates.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Security-First Design:</span> We embed security at every layer—from network segmentation to identity management—creating defense-in-depth architectures.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Performance Optimization:</span> We fine-tune every component for speed, reducing latency and maximizing throughput to deliver exceptional user experiences.
+    </li>
+  </ul>
+  `,
+      secondSection: `<h2 class="text-xl font-semibold mb-4">
+    The Infrastructure Transformation Process
+  </h2>
+  <ul class="list-decimal pl-6 mb-6">
+    <li class="mb-3">
+      <span class="font-semibold">Architectural Assessment:</span> We analyze your current infrastructure, identifying bottlenecks, security gaps, and optimization opportunities.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Strategic Blueprinting:</span> We design a cloud roadmap that aligns with your business objectives, balancing performance, cost, and scalability.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Migration Execution:</span> We execute seamless migrations with zero-downtime strategies, ensuring business continuity throughout the transition.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Automation Implementation:</span> We deploy monitoring, alerting, and auto-scaling systems that keep your infrastructure self-managing and cost-optimized.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Continuous Optimization:</span> We provide ongoing management and optimization, ensuring your infrastructure evolves with your needs.
+    </li>
+  </ul>
+  `,
+      thirdSection: `<h2 class="text-xl font-semibold mb-4">
+    Why Infrastructure Matters
+  </h2>
+  <ul class="list-disc pl-6 mb-6">
+    <li class="mb-3">
+      <span class="font-semibold">Operational Excellence:</span>
+      A well-architected infrastructure reduces downtime, improves reliability, and enables rapid innovation.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Cost Efficiency:</span>
+      Right-sizing and auto-scaling ensure you pay only for what you use, dramatically reducing operational expenses.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Security & Compliance:</span>
+      Enterprise-grade security and compliance frameworks protect your data and meet regulatory requirements.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Global Scalability:</span>
+      Cloud infrastructure enables you to reach global audiences with low latency and high availability.
+    </li>
+  </ul>
+  `,
+    },
+  },
 ];

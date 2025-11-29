@@ -9,7 +9,7 @@ export const companyDetails = {
   address:
     "Icon Tower Office No. 702 Sr 114/5 ,115/1 ,114/6/3 BANER, Pune MAHARASHTRA-411045",
   phone: "+918380862789",
-  email: "abc@example.com",
+  email: "info@panthm.com",
 };
 
 // working process
