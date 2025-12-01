@@ -8,12 +8,12 @@ module.exports = {
         body: ["'Inter'", "sans-serif"],
       },
       colors: {
-        primary: "#9B00FF", // Indigo 600
+        primary: "#9B00FF", // purple color from logo
         secondary: "#0EA5E9", // Sky 500
         accent: "#F59E0B", // Amber 500
         dark: "#0F172A", // Slate 900
         light: "#F8FAFC", // Slate 50
-        purpleColor: "#9B00FF", // Violet 500 - keeping for compatibility but updated tone
+        purpleColor: "#9B00FF", // purple color from logo
       },
       boxShadow: {
         large: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
