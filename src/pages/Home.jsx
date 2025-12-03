@@ -18,6 +18,7 @@ import {
   Users,
   Target,
   BarChart,
+  Phone,
 } from "lucide-react";
 import { ReactComponent as icon1 } from "../assets/svg/services/Web Development.svg";
 import { ReactComponent as icon2 } from "../assets/svg/services/App Development.svg";
@@ -35,22 +36,28 @@ const Testimonials = lazy(() => import("../components/Testimonials"));
 const ServicesWeProvide = lazy(() =>
   import("../components/website/ServicesWeProvide")
 );
-const HomePortfolio = lazy(() => import("../components/HomePortfolio"));
 
 const bannerServices = [
   {
     id: 1,
-    title: "Web Engineering",
+    title: "Web Development",
     icon: icon1,
     desc: "Architecting high-performance digital ecosystems that drive conversion and engagement.",
     landingPageLink: "/web-development",
   },
   {
     id: 2,
-    title: "Mobile Innovation",
+    title: "App Development",
     icon: icon2,
     desc: "Crafting intuitive, native-quality mobile experiences for the connected world.",
     landingPageLink: "/app-development",
+  },
+  {
+    id: 3,
+    title: "AI Calling Agency",
+    icon: Phone,
+    desc: "Deploy intelligent voice agents that handle support, sales, and scheduling 24/7.",
+    landingPageLink: "/ai-calling-agency",
   },
 ];
 
@@ -94,16 +101,16 @@ const Home = () => {
               <CodeXml size={16} className="text-primary" />
               <span>Next-Gen IT & AI Solutions</span>
             </div>
-            
+
             <h1 data-aos="fade-up" data-aos-delay="100" className="heading text-white leading-tight">
               Forging the Future of <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purpleColor to-secondary">
                 Digital Intelligence
               </span>
             </h1>
-            
+
             <p data-aos="fade-up" data-aos-delay="200" className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
-              We empower visionary enterprises with cutting-edge web, mobile, and AI technologies. 
+              We empower visionary enterprises with cutting-edge web, mobile, and AI technologies.
               Transform your digital presence into a growth engine.
             </p>
 
@@ -117,7 +124,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mt-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20">
             {bannerServices.map((item, index) => (
               <div
                 key={item.id}
@@ -127,7 +134,7 @@ const Home = () => {
               >
                 <div className="flex justify-between items-start mb-6">
                   <div className="p-4 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all">
-                    <item.icon className="w-10 h-10 fill-white" />
+                    <item.icon strokeWidth={0} className="w-10 h-10 fill-white" />
                   </div>
                   <Link
                     to={item.landingPageLink}
@@ -164,7 +171,7 @@ const Home = () => {
               Deploying industry-specific intelligence to solve complex challenges across sectors.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {industries.map((item, index) => (
               <div
@@ -262,7 +269,7 @@ const Home = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent"></div>
           </div>
-          
+
           <div className="relative z-10 p-10 md:p-16 max-w-2xl space-y-6">
             <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
               Ready to Architect <br /> Your Digital Future?
@@ -278,9 +285,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Portfolio Section */}
-      <HomePortfolio />
 
       {/* Why Work With Us Section */}
       <section className="py-20 bg-slate-50">

@@ -39,6 +39,28 @@ const industries = [
 
 const LandingPage = ({ page }) => {
   const isWeb = page === "web";
+  const isApp = page === "app";
+  const isAiCalling = page === "ai-calling";
+
+  let title, subtitle, description;
+
+  if (isWeb) {
+    title = "Web Solutions";
+    subtitle = "Web Development";
+    description =
+      "We design and develop user-centric websites that streamline your business processes, boost engagement, and deliver seamless experiences across devices.";
+  } else if (isApp) {
+    title = "App Solutions";
+    subtitle = "App Development";
+    description =
+      "Our expert team creates innovative, user-friendly mobile applications that bring your ideas to life. Whether it’s Android, iOS, or cross-platform development.";
+  } else if (isAiCalling) {
+    title = "AI Voice Agents";
+    subtitle = "AI Calling Agency";
+    description =
+      "Revolutionize your customer engagement with intelligent, human-like AI voice agents. Automate support, sales, and appointment setting with zero wait times.";
+  }
+
   return (
     <>
       <section className="relative min-h-screen flex items-center overflow-hidden banner">
@@ -64,20 +86,26 @@ const LandingPage = ({ page }) => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white"
             >
               <CodeXml size={20} className="text-primary" />
-              <span className="font-medium">{isWeb ? "Web Development" : "App Development"}</span>
+              <span className="font-medium">{subtitle}</span>
             </div>
 
-            <h1 data-aos="fade-up" data-aos-delay="100" className="heading text-white leading-tight">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="heading text-white leading-tight"
+            >
               Empowering Your Business with Seamless
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary block mt-2">
-                {isWeb ? "Web Solutions" : "App Solutions"}
+                {title}
               </span>
             </h1>
 
-            <p data-aos="fade-up" data-aos-delay="200" className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
-              {isWeb
-                ? "We design and develop user-centric websites that streamline your business processes, boost engagement, and deliver seamless experiences across devices."
-                : "Our expert team creates innovative, user-friendly mobile applications that bring your ideas to life. Whether it’s Android, iOS, or cross-platform development."}
+            <p
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed"
+            >
+              {description}
             </p>
 
             <div data-aos="fade-up" data-aos-delay="300" className="flex flex-wrap gap-4">
@@ -95,9 +123,9 @@ const LandingPage = ({ page }) => {
         <Testimonials />
       </section>
 
-      <LandingServices isWeb={isWeb} />
+      <LandingServices page={page} />
 
-      <Portfolio page={page} />
+      <Portfolio  />
 
       <section className="py-20 bg-slate-900 text-white">
         <div className="wrapper space-y-16">

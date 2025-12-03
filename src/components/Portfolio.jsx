@@ -1,5 +1,9 @@
 import React from "react";
-import { appPortfolio, webPortfolio } from "../data/portfolio";
+import {
+  appPortfolio,
+  webPortfolio,
+  aiCallingPortfolio,
+} from "../data/portfolio";
 import { ArrowUpRight } from "lucide-react";
 
 const Portfolio = ({ page }) => {
@@ -9,7 +13,7 @@ const Portfolio = ({ page }) => {
     portfolioList = webPortfolio;
   } else if (page === "app") {
     portfolioList = appPortfolio;
-  } else {
+  }  else {
     portfolioList = webPortfolio.slice(0, 3).concat(appPortfolio.slice(0, 3));
   }
   return (
@@ -44,7 +48,7 @@ const Portfolio = ({ page }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              
+
               <div className="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                 <div className="flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                   <h3 className="text-xl font-bold">{title}</h3>

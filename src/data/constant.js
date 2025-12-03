@@ -101,6 +101,38 @@ export const appDevelopmentServices = [
   },
 ];
 
+// ai calling services
+export const aiCallingServices = [
+  {
+    id: 1,
+    title: "Intelligent Inbound Support",
+    image: require("../assets/images/services/aicalling1.webp"),
+    description:
+      "Resolve customer queries instantly with AI agents that understand context and emotion. Provide 24/7 support without the wait times.",
+  },
+  {
+    id: 2,
+    title: "Proactive Outbound Sales",
+    image: require("../assets/images/services/aicalling2.webp"),
+    description:
+      "Supercharge lead generation with human-like AI callers. Qualify leads, conduct surveys, and drive sales with persuasive conversations.",
+  },
+  {
+    id: 3,
+    title: "Automated Appointment Setting",
+    image: require("../assets/images/services/aicalling3.webp"),
+    description:
+      "Streamline your scheduling process. Our AI negotiates times, handles cancellations, and integrates directly with your calendar.",
+  },
+  {
+    id: 4,
+    title: "Real-Time Sentiment Analysis",
+    image: require("../assets/images/ai-telecalling.png"),
+    description:
+      "Understand your customers better. Our agents analyze tone and sentiment to adapt their approach and ensure satisfaction.",
+  },
+];
+
 // testimonials
 export const testimonials = [
   {

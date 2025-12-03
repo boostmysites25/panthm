@@ -2,20 +2,32 @@ import React from "react";
 import {
   appDevelopmentServices,
   webDevelopmentServices,
+  aiCallingServices,
 } from "../../data/constant";
 import { ArrowScrollButton } from "../ArrowButtons";
 import { ArrowRight } from "lucide-react";
 
-const LandingServices = ({ isWeb }) => {
-  const services = isWeb ? webDevelopmentServices : appDevelopmentServices;
+const LandingServices = ({ page }) => {
+  let services;
+  let title;
+
+  if (page === "web") {
+    services = webDevelopmentServices;
+    title = "Our Web Development Services";
+  } else if (page === "app") {
+    services = appDevelopmentServices;
+    title = "Our App Development Services";
+  } else if (page === "ai-calling") {
+    services = aiCallingServices;
+    title = "Our AI Calling Capabilities";
+  }
+
   return (
     <section id="services" className="py-20 bg-slate-50">
       <div className="wrapper">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h2 data-aos="fade-up" className="section-heading">
-            {isWeb
-              ? "Our Web Development Services"
-              : "Our App Development Services"}
+            {title}
           </h2>
           <p data-aos="fade-up" className="text-slate-600 text-lg">
             Comprehensive solutions tailored to elevate your digital presence and drive business growth.

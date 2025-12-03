@@ -1,11 +1,11 @@
 // portfolio images (web development)
 export const webPortfolio = [
-  {
-    id: 1,
-    img: require("../assets/images/portfolio/web-development/5ghomes.webp"),
-    title: "5g Homes",
-    link: "https://5ghighspeedinternet.co",
-  },
+  // {
+  //   id: 1,
+  //   img: require("../assets/images/portfolio/web-development/5ghomes.webp"),
+  //   title: "5g Homes",
+  //   link: "https://5ghighspeedinternet.co",
+  // },
   {
     id: 2,
     img: require("../assets/images/portfolio/web-development/cold-creekcap.webp"),
@@ -65,4 +65,5 @@ export const appPortfolio = [
     link: "https://play.google.com/store/apps/details?id=com.rentop&pcampaignid=web_share",
   },
 ];
+
 

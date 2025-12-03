@@ -1,6 +1,79 @@
 // all services
 export const services = [
   {
+    title: "AI Calling Agency",
+    image: require("../assets/images/ai-telecalling.png"),
+    shortDesc:
+      "Revolutionizing customer engagement with intelligent, human-like voice AI agents.",
+    technologies: ["Python", "TensorFlow", "Twilio", "OpenAI", "Vapi"],
+    detailsPageImages: {
+      first: require("../assets/images/services/aicalling1.webp"),
+      second: require("../assets/images/services/aicalling2.webp"),
+      third: require("../assets/images/services/aicalling3.webp"),
+    },
+    html: {
+      firstSection: `<h2 class="text-xl font-semibold mb-4">
+    The Future of Voice Communication
+  </h2>
+  <p class="mb-6">
+    Voice remains the most natural, immediate, and effective way to connect. However, traditional call centers are plagued by high costs, limited availability, and inconsistent quality.
+    At <span class="font-semibold">PANTHM AI Labs</span>, we are rewriting the rules of engagement. We deploy next-generation AI Voice Agents that don't just mimic human speech—they understand context, emotion, and intent.
+  </p>
+  <p class="mb-10">
+    Our AI agents sound and think like your best employees, capable of handling thousands of concurrent calls 24/7 with zero wait times and infinite patience. Whether it's inbound support, outbound sales, or complex appointment setting, our voice AI delivers a seamless, human-quality experience at a scale previously impossible.
+  </p>
+  `,
+      secondSection: `<h2 class="text-xl font-semibold mb-4">
+    Our Voice Capabilities:
+  </h2>
+  <ul class="list-decimal pl-6 mb-6">
+    <li class="mb-3">
+      <span class="font-semibold">Intelligent Inbound Support:</span> 
+      Instantly resolve customer queries, troubleshoot technical issues, and provide personalized assistance without ever putting a customer on hold. Our agents integrate with your knowledge base to provide accurate, up-to-date answers every time.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Proactive Outbound Sales:</span> 
+      Supercharge your lead generation with AI that can qualify leads, conduct market surveys, and drive sales with persuasive, natural conversations. Our agents never get tired of rejection and maintain peak performance on every call.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Advanced Appointment Setting:</span> 
+      Automate the scheduling process entirely. Our AI negotiates times, handles cancellations, and sends calendar invites, ensuring your sales team's calendar is always full of qualified meetings.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Real-Time Sentiment Analysis:</span> 
+      Our agents are emotionally intelligent. They analyze tone and sentiment in real-time, adapting their approach to de-escalate frustrated customers or close deals with enthusiastic ones.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Seamless Human Handoff:</span> 
+      We believe in the power of human-AI collaboration. When a conversation reaches a level of complexity requiring human nuance, the AI smoothly transfers the call to a live agent, passing along the full transcript and context.
+    </li>
+  </ul>
+  `,
+      thirdSection: `<h2 class="text-xl font-semibold mb-4">
+    Why Choose Our AI Voice Agents?
+  </h2>
+  <ul class="list-disc pl-6 mb-6">
+    <li class="mb-3">
+      <span class="font-semibold">Unmatched Scalability:</span>
+      Handle sudden spikes in call volume effortlessly. Whether it's a holiday rush or a viral marketing campaign, our AI scales instantly to meet demand without the need for hiring or training.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Dramatic Cost Efficiency:</span>
+      Reduce operational costs by up to 80% compared to traditional call centers while simultaneously improving service quality and availability.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Consistent Brand Voice:</span>
+      Ensure every single interaction aligns perfectly with your brand's tone, values, and compliance requirements. Eliminate the variability of human performance.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Data-Driven Insights:</span>
+      Every call is transcribed and analyzed. We provide deep insights into customer behavior, common pain points, and sales trends, allowing you to continuously optimize your strategy.
+    </li>
+  </ul>
+  `,
+    },
+  },
+  {
     title: "Web Development",
     image: require("../assets/images/web-dev-vector.png"),
     shortDesc:
@@ -432,6 +505,80 @@ export const services = [
     <li class="mb-3">
       <span class="font-semibold">Global Scalability:</span>
       Cloud infrastructure enables you to reach global audiences with low latency and high availability.
+    </li>
+  </ul>
+  `,
+    },
+  },
+
+  {
+    title: "AI Automation",
+    image: require("../assets/images/ai-automation.png"),
+    shortDesc:
+      "Streamlining operations and boosting efficiency with end-to-end intelligent automation.",
+    technologies: ["Zapier", "Make", "Python", "UiPath", "Power Automate"],
+    detailsPageImages: {
+      first: require("../assets/images/services/aiautomation1.webp"),
+      second: require("../assets/images/services/aiautomation2.webp"),
+      third: require("../assets/images/services/aiautomation3.webp"),
+    },
+    html: {
+      firstSection: `<h2 class="text-xl font-semibold mb-4">
+    Operational Excellence through AI
+  </h2>
+  <p class="mb-6">
+    In the fast-paced digital economy, efficiency is not just a metric—it's the difference between market leadership and obsolescence. Manual processes are slow, error-prone, and expensive.
+    At <span class="font-semibold">PANTHM AI Labs</span>, we eliminate these bottlenecks by designing intelligent, self-driving workflows. We don't just automate tasks; we re-engineer your entire operational fabric.
+  </p>
+  <p class="mb-10">
+    We build intelligent systems that connect your apps, data, and teams, allowing information to flow instantaneously and accurately. By offloading repetitive, low-value work to AI, we liberate your human talent to focus on high-value strategic initiatives, creative problem-solving, and customer relationships.
+  </p>
+  `,
+      secondSection: `<h2 class="text-xl font-semibold mb-4">
+    Our Automation Solutions:
+  </h2>
+  <ul class="list-decimal pl-6 mb-6">
+    <li class="mb-3">
+      <span class="font-semibold">End-to-End Workflow Automation:</span> 
+      We seamlessly connect disparate applications—from CRM to ERP to marketing platforms—creating a unified ecosystem where data moves automatically. Using tools like Zapier, Make, and custom APIs, we ensure your tech stack works as one.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Intelligent Document Processing (IDP):</span> 
+      Transform unstructured data into actionable insights. Our AI-powered OCR systems automatically extract, validate, and enter data from invoices, contracts, forms, and receipts, eliminating manual data entry forever.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Custom Bots & Web Scrapers:</span> 
+      Gain a competitive edge with bespoke bots that work 24/7. Whether it's monitoring competitor pricing, aggregating market research, or generating leads from social media, our custom scripts gather the intelligence you need.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">CRM & Marketing Autopilot:</span> 
+      Streamline your entire customer journey. We automate lead scoring, nurturing sequences, and customer onboarding, ensuring no opportunity slips through the cracks and every customer receives a personalized experience.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">HR & Onboarding Automation:</span> 
+      Create a world-class employee experience from day one. Automate contract generation, access provisioning, and training modules, allowing your HR team to focus on culture and people.
+    </li>
+  </ul>
+  `,
+      thirdSection: `<h2 class="text-xl font-semibold mb-4">
+    The Impact of Automation
+  </h2>
+  <ul class="list-disc pl-6 mb-6">
+    <li class="mb-3">
+      <span class="font-semibold">Zero-Error Operations:</span>
+      Eliminate the cost and risk of human error. Our automated systems ensure 100% data accuracy and compliance across all your business processes.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Exponential Speed & Agility:</span>
+      Execute complex processes in seconds that used to take hours or days. React to market changes instantly and deliver value to your customers faster than ever before.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Employee Satisfaction & Retention:</span>
+      Free your team from the drudgery of mundane tasks. Empower them to do the creative, strategic work they love, leading to higher job satisfaction and lower turnover.
+    </li>
+    <li class="mb-3">
+      <span class="font-semibold">Scalability on Demand:</span>
+      Grow your business without growing your overhead. Our automated systems handle increased workloads effortlessly, allowing you to scale up without adding headcount.
     </li>
   </ul>
   `,

@@ -28,6 +28,7 @@ const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const Thankyou = lazy(() => import("./pages/Thankyou"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
 
 AOS.init({
   once: true,
@@ -118,6 +119,16 @@ function App() {
               />
             </Route>
 
+            {/* Portfolio */}
+            <Route
+              path="/portfolio"
+              element={
+                <>
+                  <Header /> <Portfolio /> <Footer />
+                </>
+              }
+            />
+
             {/* Landing pages */}
             <Route
               path="/web-development"
@@ -135,6 +146,16 @@ function App() {
                 <>
                   <LandingHeader />
                   <LandingPage page="app" />
+                  <LandingFooter />
+                </>
+              }
+            />
+            <Route
+              path="/ai-calling-agency"
+              element={
+                <>
+                  <LandingHeader />
+                  <LandingPage page="ai-calling" />
                   <LandingFooter />
                 </>
               }
