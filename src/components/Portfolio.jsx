@@ -1,5 +1,5 @@
 import React from "react";
-import { appPortfolio, webPortfolio } from "../data/constant";
+import { appPortfolio, webPortfolio } from "../data/portfolio";
 import { ArrowUpRight } from "lucide-react";
 
 const Portfolio = ({ page }) => {
@@ -25,12 +25,15 @@ const Portfolio = ({ page }) => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioList.map(({ img, id, title }, index) => (
-            <div
+          {portfolioList.map(({ img, id, title, link }, index) => (
+            <a
               key={id}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white"
+              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white block"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
@@ -45,12 +48,12 @@ const Portfolio = ({ page }) => {
               <div className="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                 <div className="flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                   <h3 className="text-xl font-bold">{title}</h3>
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
+                  <div className="w-10 min-w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-primary transition-colors">
                     <ArrowUpRight size={20} />
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

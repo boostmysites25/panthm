@@ -1,0 +1,101 @@
+import React, { useState, useMemo } from "react";
+import { appPortfolio, webPortfolio } from "../data/portfolio";
+import { ArrowUpRight } from "lucide-react";
+
+const HomePortfolio = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filters = [
+    { id: "all", label: "All Projects" },
+    { id: "web", label: "Web Development" },
+    { id: "app", label: "App Development" },
+  ];
+
+  const filteredPortfolio = useMemo(() => {
+    if (activeFilter === "all") {
+      return [...webPortfolio, ...appPortfolio];
+    } else if (activeFilter === "web") {
+      return webPortfolio;
+    } else {
+      return appPortfolio;
+    }
+  }, [activeFilter]);
+
+  return (
+    <section className="py-20 bg-white">
+      <div className="wrapper">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+          <h2 data-aos="fade-up" className="section-heading">
+            Our Portfolio
+          </h2>
+          <p data-aos="fade-up" className="text-slate-600 text-lg">
+            Showcasing our expertise in delivering high-impact digital solutions across web and mobile platforms.
+          </p>
+        </div>
+
+        {/* Filter Buttons */}
+        <div
+          data-aos="fade-up"
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                activeFilter === filter.id
+                  ? "bg-primary text-white shadow-lg shadow-primary/30 scale-105"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Portfolio Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPortfolio.map(({ img, id, title, link }, index) => (
+            <a
+              key={id}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
+              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white block"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  loading="lazy"
+                  src={img}
+                  alt={title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+
+              <div className="absolute bottom-0 left-0 w-full p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="flex items-center justify-between text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                  <h3 className="text-xl font-bold pr-2">{title}</h3>
+                  <div className="w-10 min-w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white hover:text-primary transition-colors flex-shrink-0">
+                    <ArrowUpRight size={20} />
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        {filteredPortfolio.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-slate-500 text-lg">No projects found.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default HomePortfolio;
+

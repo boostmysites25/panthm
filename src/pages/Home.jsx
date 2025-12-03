@@ -35,6 +35,7 @@ const Testimonials = lazy(() => import("../components/Testimonials"));
 const ServicesWeProvide = lazy(() =>
   import("../components/website/ServicesWeProvide")
 );
+const HomePortfolio = lazy(() => import("../components/HomePortfolio"));
 
 const bannerServices = [
   {
@@ -277,6 +278,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Section */}
+      <HomePortfolio />
 
       {/* Why Work With Us Section */}
       <section className="py-20 bg-slate-50">
