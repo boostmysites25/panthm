@@ -29,6 +29,8 @@ import whyWorkWithUs2 from "../assets/images/whyworkwithus2.png";
 import whyWorkWithUs3 from "../assets/images/whyworkwithus3.png";
 import whyWorkWithUs4 from "../assets/images/whyworkwithus4.png";
 import { ArrowLinkButton } from "../components/ArrowButtons";
+import SEO from "../components/SEO";
+import { companyDetails } from "../data/constant";
 
 const ContactForm = lazy(() => import("../components/ContactForm"));
 const BlogsSection = lazy(() => import("../components/website/BlogsSection"));
@@ -73,8 +75,52 @@ const industries = [
 ];
 
 const Home = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": companyDetails.name,
+    "url": "https://panthm.com",
+    "logo": "https://panthm.com/logo.png",
+    "description": "Leading technology company specializing in web development, mobile app development, AI solutions, blockchain, and game development.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Icon Tower Office No. 702 Sr 114/5 ,115/1 ,114/6/3 BANER",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411045",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918380862789",
+      "contactType": "customer service",
+      "email": "info@panthm.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/panthm-ai-labs",
+      "https://twitter.com/panthm",
+      "https://www.facebook.com/panthm"
+    ],
+    "areaServed": "Worldwide",
+    "knowsAbout": [
+      "Web Development",
+      "Mobile App Development",
+      "AI Solutions",
+      "Blockchain Development",
+      "Game Development",
+      "UI/UX Design",
+      "Cloud Infrastructure"
+    ]
+  };
+
   return (
     <>
+      <SEO
+        title="Home"
+        description="PANTHM AI Labs - Leading technology company specializing in web development, mobile app development, AI solutions, blockchain, and game development. Transform your digital presence with cutting-edge technology."
+        keywords="web development, app development, AI solutions, blockchain development, game development, mobile app development, React development, Node.js, Python, machine learning, software development company, Pune, India"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden banner">
         <div className="absolute inset-0 z-0">

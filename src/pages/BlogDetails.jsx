@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchBlogBySlug } from "../api/blogApi";
 import { Calendar, User, Clock } from "lucide-react";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import SEO from "../components/SEO";
+import { companyDetails } from "../data/constant";
 
 const BlogsSection = lazy(() => import("../components/website/BlogsSection"));
 
@@ -60,8 +62,44 @@ const BlogDetails = () => {
 
   const blog = data.blog;
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "description": blog.excerpt || blog.metaDescription || "",
+    "image": blog.imageUrl || "",
+    "datePublished": blog.publishDate || blog.createdAt,
+    "dateModified": blog.updatedAt || blog.createdAt,
+    "author": {
+      "@type": "Person",
+      "name": blog.author?.name || blog.authorId?.name || "Admin"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": companyDetails.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://panthm.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://panthm.com/blogs/${blog.slug}`
+    },
+    "keywords": blog.metaKeywords?.join(", ") || blog.tags?.join(", ") || ""
+  };
+
   return (
     <div className="pt-20">
+      <SEO
+        title={blog.title}
+        description={blog.excerpt || blog.metaDescription || `Read ${blog.title} on PANTHM AI Labs blog. Expert insights on technology, web development, and digital innovation.`}
+        keywords={blog.metaKeywords?.join(", ") || blog.tags?.join(", ") || "technology, web development, software development"}
+        image={blog.imageUrl}
+        url={`https://panthm.com/blogs/${blog.slug}`}
+        type="article"
+        structuredData={structuredData}
+      />
       <div className="bg-slate-900 py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
         <div className="wrapper relative z-10 max-w-4xl mx-auto text-center space-y-6">

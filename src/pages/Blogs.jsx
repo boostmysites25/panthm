@@ -4,8 +4,19 @@ import { ArrowRight, Calendar, User } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPublishedBlogs } from "../api/blogApi";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import SEO from "../components/SEO";
 
 const Blogs = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "PANTHM AI Labs Blog",
+    "description": "Insights, trends, and strategies from the forefront of digital innovation. Expert articles on web development, app development, AI, and technology.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PANTHM AI Labs"
+    }
+  };
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["publishedBlogs"],
     queryFn: fetchPublishedBlogs,
@@ -47,6 +58,12 @@ const Blogs = () => {
 
   return (
     <div className="pt-32 pb-20 bg-slate-50 min-h-screen">
+      <SEO
+        title="Blogs"
+        description="Read insights, trends, and strategies from PANTHM AI Labs. Expert articles on web development, mobile app development, AI solutions, blockchain, and technology innovation."
+        keywords="technology blog, web development blog, app development blog, AI blog, software development articles, tech insights, digital innovation blog"
+        structuredData={structuredData}
+      />
       <div className="wrapper">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h1 data-aos="fade-up" className="heading">

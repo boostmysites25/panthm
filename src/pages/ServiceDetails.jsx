@@ -1,6 +1,8 @@
 import React, { lazy } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { services } from "../data/services";
+import SEO from "../components/SEO";
+import { companyDetails } from "../data/constant";
 
 const BlogsSection = lazy(() => import("../components/website/BlogsSection"));
 
@@ -8,8 +10,42 @@ const ServiceDetails = () => {
   const { name } = useParams();
   const data = services.find((service) => service.title === name);
   if (!data) return <Navigate to="/" />;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": data.title,
+    "provider": {
+      "@type": "Organization",
+      "name": companyDetails.name,
+      "url": "https://panthm.com"
+    },
+    "description": data.shortDesc,
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": data.title,
+      "itemListElement": data.technologies.map((tech, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": tech
+        },
+        "position": index + 1
+      }))
+    }
+  };
+
   return (
     <div className="pt-20">
+      <SEO
+        title={data.title}
+        description={data.shortDesc || `Professional ${data.title} services by PANTHM AI Labs. Expert team delivering cutting-edge solutions using ${data.technologies.join(", ")}.`}
+        keywords={`${data.title}, ${data.technologies.join(", ")}, software development, web development, app development, technology services`}
+        image={data.image}
+        url={`https://panthm.com/services/${encodeURIComponent(data.title)}`}
+        structuredData={structuredData}
+      />
       <div className="bg-slate-900 py-20 text-white">
         <div className="wrapper">
           <h1 className="heading max-w-4xl text-white">{data.title}</h1>

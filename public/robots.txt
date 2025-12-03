@@ -1,3 +1,21 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://panthm.com/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /thank-you
+Disallow: /api/
+
+# Allow all important pages
+Allow: /
+Allow: /about-us
+Allow: /services
+Allow: /portfolio
+Allow: /blogs
+Allow: /contact
+Allow: /web-development
+Allow: /app-development
+Allow: /ai-calling-agency

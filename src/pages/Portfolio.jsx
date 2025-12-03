@@ -1,8 +1,38 @@
 import React, { useState } from "react";
 import { appPortfolio, webPortfolio } from "../data/portfolio";
 import { ArrowUpRight } from "lucide-react";
+import SEO from "../components/SEO";
 
 const Portfolio = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Portfolio - PANTHM AI Labs",
+    "description": "View our portfolio of web development and mobile app development projects. Showcasing successful digital solutions across various industries.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        ...webPortfolio.map((item, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": item.title,
+            "url": item.link
+          }
+        })),
+        ...appPortfolio.map((item, index) => ({
+          "@type": "ListItem",
+          "position": webPortfolio.length + index + 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": item.title,
+            "url": item.link
+          }
+        }))
+      ]
+    }
+  };
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filters = [
@@ -26,6 +56,12 @@ const Portfolio = () => {
 
   return (
     <div className="pt-32 pb-20 bg-slate-50 min-h-screen">
+      <SEO
+        title="Portfolio"
+        description="Explore PANTHM AI Labs portfolio showcasing successful web development and mobile app development projects. View our work across e-commerce, enterprise solutions, and innovative digital platforms."
+        keywords="PANTHM AI Labs portfolio, web development portfolio, mobile app portfolio, software development projects, case studies, web development examples"
+        structuredData={structuredData}
+      />
       <div className="wrapper">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <h1 data-aos="fade-up" className="heading">

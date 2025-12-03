@@ -6,10 +6,35 @@ import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { SpinnerContext } from "../components/SpinnerContext";
+import SEO from "../components/SEO";
 
 const MapComponent = lazy(() => import("../components/website/MapComponent"));
 
 const ContactUs = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": companyDetails.name,
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": companyDetails.phone,
+        "contactType": "customer service",
+        "email": companyDetails.email,
+        "areaServed": "Worldwide",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Icon Tower Office No. 702 Sr 114/5 ,115/1 ,114/6/3 BANER",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411045",
+        "addressCountry": "IN"
+      }
+    }
+  };
   const { setSpinner } = useContext(SpinnerContext);
   const navigate = useNavigate();
   const {
@@ -69,6 +94,12 @@ const ContactUs = () => {
   };
   return (
     <div className="pt-20">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with PANTHM AI Labs. Contact us for web development, mobile app development, AI solutions, and more. Located in Pune, India. Call +918380862789 or email info@panthm.com"
+        keywords="contact PANTHM AI Labs, software development company contact, web development company Pune, app development contact, AI solutions contact"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

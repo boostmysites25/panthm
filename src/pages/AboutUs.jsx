@@ -6,6 +6,8 @@ import img1 from "../assets/images/aboutus-1.png";
 import img2 from "../assets/images/aboutus-2.png";
 import { Link } from "react-router-dom";
 import { ArrowLinkButton } from "../components/ArrowButtons";
+import SEO from "../components/SEO";
+import { companyDetails } from "../data/constant";
 
 const ContactForm = lazy(() => import("../components/ContactForm"));
 const WorkProcess = lazy(() => import("../components/WorkProcess"));
@@ -15,8 +17,34 @@ const ServicesWeProvide = lazy(() =>
 );
 
 const AboutUs = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": companyDetails.name,
+      "description": "Leading technology company specializing in web development, mobile app development, AI solutions, blockchain, and game development.",
+      "foundingDate": "2020",
+      "numberOfEmployees": "50-100",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Icon Tower Office No. 702 Sr 114/5 ,115/1 ,114/6/3 BANER",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411045",
+        "addressCountry": "IN"
+      }
+    }
+  };
+
   return (
     <>
+      <SEO
+        title="About Us"
+        description="Learn about PANTHM AI Labs - a leading technology company in Pune, India. We specialize in web development, mobile apps, AI solutions, blockchain, and game development. Expert team delivering innovative digital solutions."
+        keywords="about PANTHM AI Labs, software development company Pune, technology company India, web development company, app development team, AI solutions provider"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

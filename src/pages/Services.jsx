@@ -2,13 +2,58 @@ import React, { lazy } from "react";
 import bannerImg from "../assets/images/services-banner.webp";
 import { ArrowLinkButton } from "../components/ArrowButtons";
 import { ArrowRight } from "lucide-react";
+import SEO from "../components/SEO";
 
 const ContactForm = lazy(() => import("../components/ContactForm"));
 const ServicesWeProvide = lazy(() => import("../components/website/ServicesWeProvide"));
 
 const Services = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Software Development Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "PANTHM AI Labs"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Software Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "App Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Solutions"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
+      <SEO
+        title="Services"
+        description="Comprehensive software development services including web development, mobile app development, AI solutions, blockchain, game development, and UI/UX design. Expert team delivering cutting-edge technology solutions."
+        keywords="web development services, mobile app development services, AI solutions, blockchain development, game development, UI/UX design, software development services, custom software development"
+        structuredData={structuredData}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
